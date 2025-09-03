@@ -1,0 +1,28 @@
+# Go files
+*.go linguist-language=Go
+
+# Shell scripts
+*.sh linguist-language=Shell
+
+# Docker files
+Dockerfile linguist-language=Dockerfile
+docker-compose.yml linguist-language=YAML
+
+# Configuration files
+*.env linguist-language=Properties
+*.example linguist-language=Properties
+
+# Documentation
+*.md linguist-language=Markdown
+
+# HTML templates
+*.html linguist-language=HTML
+
+# Binary files
+*.exe -text
+*.dll -text
+*.so -text
+*.dylib -text
+
+# Generated files
+social-flow-bot -text
