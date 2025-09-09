@@ -12,14 +12,22 @@ services:
       - "6432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    restart: unless-stopped
+    restart: always
+    networks:
+      - support_bot_network
 
   redis:
     image: redis:7-alpine
     container_name: support_bot_redis
     ports:
-      - "6389:6389"
-    restart: unless-stopped
+      - "6389:6379"
+    restart: always
+    networks:
+      - support_bot_network
 
 volumes:
   postgres_data:
+
+networks:
+  support_bot_network:
+    driver: bridge

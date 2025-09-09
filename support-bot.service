@@ -1,0 +1,21 @@
+[Unit]
+Description=Social Flow Support Bot
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/apps/ai_support_tg_writer_bot
+ExecStart=/root/apps/ai_support_tg_writer_bot/run_app.sh
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=support-bot
+
+# Переменные окружения
+Environment=GIN_MODE=release
+
+[Install]
+WantedBy=multi-user.target
